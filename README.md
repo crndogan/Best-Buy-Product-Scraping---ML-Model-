@@ -13,7 +13,6 @@ Scraped Best Buy product/category pages and aggregated CSVs:
 - BestBuy_ProductsTotal.csv
 - Bestbuy_APIFY_P3.csv
 
-(Your notebook shows both requests/BeautifulSoup scraping and an APIFY export.)
 
 ## Environment
 Python 3.x
@@ -26,7 +25,7 @@ Main libraries:
 - scikit-learn
 
 ## Project Structure
-- BestbuyQ1-9.ipynb
+- Bestbuy_ML.ipynb
   - Q1: Scraping and data assembly
   - Q2: Pearson correlation and VIF
   - Q3: Lasso regression (feature selection; analysis)
@@ -37,27 +36,12 @@ Main libraries:
   - Q8: NN line diagram
   - Q9: Wrap-up answers
 
-## Data Schema (observed)
-Common columns used in modeling:
-- Title (str)
-- TitleID (str/int)
-- Price (float)
-- AverageReviewScore (float)
-- NumberOfReviews (int)
-- MonthlyPayment (float)
-- Savings (target; numeric or binary depending on modeling choice)
-
-Note: Ensure you define whether `Savings` is treated as a regression target (amount) or a classification target (has_savings yes/no).
 
 ## Web Scraping
 - HTTP requests to category/product pages (`requests`)
 - HTML parsing (`bs4.BeautifulSoup`)
 - Extracted fields: product title/ID, price, review score, review count, monthly payment, and savings
 - Wrote results to CSVs and merged into a master file
-
-Tips:
-- Respect robots.txt and rate limits
-- Use robust selectors; handle missing fields and parsing errors gracefully
 
 ## EDA and Feature Engineering
 - Basic cleaning (types, missing values)
